@@ -1,0 +1,28 @@
+diff --git a/app/config/services.yml b/app/config/services.yml
+index 5c76fc5..649b432 100644
+--- a/app/config/services.yml
++++ b/app/config/services.yml
+@@ -4,6 +4,7 @@ parameters:
+ #    parameter_name: value
+ 
+ services:
+-#    service_name:
+-#        class: AppBundle\Directory\ClassName
+-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
++    user_agent_subscriber:
++        class: AppBundle\EventListener\UserAgentSubscriber
++        tags:
++            - { name: kernel.event_subscriber }
+diff --git a/src/AppBundle/EventListener/UserAgentSubscriber.php b/src/AppBundle/EventListener/UserAgentSubscriber.php
+new file mode 100644
+index 0000000..6c85523
+--- /dev/null
++++ b/src/AppBundle/EventListener/UserAgentSubscriber.php
+@@ -0,0 +1,7 @@
++<?php
++
++namespace AppBundle\EventListener;
++
++class UserAgentSubscriber
++{
++}

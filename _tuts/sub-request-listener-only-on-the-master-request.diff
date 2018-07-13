@@ -1,0 +1,35 @@
+diff --git a/src/AppBundle/Controller/DinosaurController.php b/src/AppBundle/Controller/DinosaurController.php
+index 75fee6c..4e7b269 100644
+--- a/src/AppBundle/Controller/DinosaurController.php
++++ b/src/AppBundle/Controller/DinosaurController.php
+@@ -19,6 +19,7 @@ class DinosaurController extends Controller
+             ->getRepository('AppBundle:Dinosaur')
+             ->findAll();
+ 
++        /*
+         $request = new Request();
+         $request->attributes->set(
+             '_controller',
+@@ -29,6 +30,7 @@ class DinosaurController extends Controller
+             $request,
+             HttpKernelInterface::SUB_REQUEST
+         );
++        */
+ 
+         return $this->render('dinosaurs/index.html.twig', [
+             'dinos' => $dinos,
+diff --git a/src/AppBundle/EventListener/UserAgentSubscriber.php b/src/AppBundle/EventListener/UserAgentSubscriber.php
+index c5931ca..01c2261 100644
+--- a/src/AppBundle/EventListener/UserAgentSubscriber.php
++++ b/src/AppBundle/EventListener/UserAgentSubscriber.php
+@@ -19,6 +19,10 @@ class UserAgentSubscriber implements EventSubscriberInterface
+ 
+     public function onKernelRequest(GetResponseEvent $event)
+     {
++        if (!$event->isMasterRequest()) {
++            return;
++        }
++
+         $request = $event->getRequest();
+         $userAgent = $request->headers->get('User-Agent');
+ 

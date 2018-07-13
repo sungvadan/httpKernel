@@ -1,0 +1,50 @@
+diff --git a/app/Resources/views/base.html.twig b/app/Resources/views/base.html.twig
+index 77b103b..ac58259 100644
+--- a/app/Resources/views/base.html.twig
++++ b/app/Resources/views/base.html.twig
+@@ -39,6 +39,7 @@
+                 </div>
+                 <div class="clearfix">
+                 </div>
++                {{ render(controller('AppBundle:Dinosaur:_latestTweets')) }}
+             </div>
+         </div>
+ 
+diff --git a/app/Resources/views/dinosaurs/_latestTweets.html.twig b/app/Resources/views/dinosaurs/_latestTweets.html.twig
+new file mode 100644
+index 0000000..636858c
+--- /dev/null
++++ b/app/Resources/views/dinosaurs/_latestTweets.html.twig
+@@ -0,0 +1,9 @@
++
++<div class="navbar-left tweets">
++    <p class="text-center">Tweets from T-Rex Problems</p>
++    <ul>
++        {% for tweet in tweets %}
++            <li>{{ tweet }}</li>
++        {% endfor %}
++    </ul>
++</div>
+diff --git a/src/AppBundle/Controller/DinosaurController.php b/src/AppBundle/Controller/DinosaurController.php
+index 3f9105e..028c488 100644
+--- a/src/AppBundle/Controller/DinosaurController.php
++++ b/src/AppBundle/Controller/DinosaurController.php
+@@ -40,4 +40,17 @@ class DinosaurController extends Controller
+             'dino' => $dino,
+         ]);
+     }
++
++    public function _latestTweetsAction()
++    {
++        $tweets = [
++            'Dinosaurs can have existential crises too you know.',
++            'Eating lollipops... ',
++            'Rock climbing... '
++        ];
++
++        return $this->render('dinosaurs/_latestTweets.html.twig', [
++            'tweets' => $tweets
++        ]);
++    }
+ } 
+\ No newline at end of file

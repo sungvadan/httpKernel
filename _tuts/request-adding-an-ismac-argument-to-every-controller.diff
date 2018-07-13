@@ -1,0 +1,54 @@
+diff --git a/app/Resources/views/dinosaurs/index.html.twig b/app/Resources/views/dinosaurs/index.html.twig
+index f739b57..2fbe668 100644
+--- a/app/Resources/views/dinosaurs/index.html.twig
++++ b/app/Resources/views/dinosaurs/index.html.twig
+@@ -5,6 +5,9 @@
+         <div class="dino-header text-center">
+             <h1>Journey to the Center of the Earth</h1>
+             <h2 class="journey-font">DINOSAURS!</h2>
++            {% if isMac %}
++                <h3>We love eating Mac's...RAWR!</h3>
++            {% endif %}
+         </div>
+         <div class="row">
+             {% for dino in dinos %}
+diff --git a/src/AppBundle/Controller/DinosaurController.php b/src/AppBundle/Controller/DinosaurController.php
+index bc4a8d9..3f9105e 100644
+--- a/src/AppBundle/Controller/DinosaurController.php
++++ b/src/AppBundle/Controller/DinosaurController.php
+@@ -11,7 +11,7 @@ class DinosaurController extends Controller
+     /**
+      * @Route("/", name="dinosaur_list")
+      */
+-    public function indexAction()
++    public function indexAction($isMac)
+     {
+         $dinos = $this->getDoctrine()
+             ->getRepository('AppBundle:Dinosaur')
+@@ -19,6 +19,7 @@ class DinosaurController extends Controller
+ 
+         return $this->render('dinosaurs/index.html.twig', [
+             'dinos' => $dinos,
++            'isMac' => $isMac
+         ]);
+     }
+ 
+diff --git a/src/AppBundle/EventListener/UserAgentSubscriber.php b/src/AppBundle/EventListener/UserAgentSubscriber.php
+index c784715..d1442ec 100644
+--- a/src/AppBundle/EventListener/UserAgentSubscriber.php
++++ b/src/AppBundle/EventListener/UserAgentSubscriber.php
+@@ -29,9 +29,14 @@ class UserAgentSubscriber implements EventSubscriberInterface
+             //$event->setResponse($response);
+         }
+ 
++        $isMac = stripos($userAgent, 'Mac') !== false;
++        $request->attributes->set('isMac', $isMac);
++
++        /*
+         $request->attributes->set('_controller', function($id) {
+             return new Response('Hello '.$id);
+         });
++        */
+     }
+ 
+     public static function getSubscribedEvents()

@@ -1,0 +1,280 @@
+{
+    "steps": [
+        {
+            "id": "start",
+            "name": "start",
+            "description": null
+        },
+        {
+            "id": "eventlistener-create-it",
+            "name": "EventListener: Create it!",
+            "description": null
+        },
+        {
+            "id": "eventlistener-initial-code",
+            "name": "EventListener: Initial code",
+            "description": null
+        },
+        {
+            "id": "eventlistener-adding-loggin",
+            "name": "EventListener: Adding loggin",
+            "description": null
+        },
+        {
+            "id": "eventlistener-dumping-event",
+            "name": "EventListener: Dumping event",
+            "description": null
+        },
+        {
+            "id": "eventlistener-print-user-agent",
+            "name": "EventListener: Print user-agent",
+            "description": null
+        },
+        {
+            "id": "request-create-and-process-2-requests",
+            "name": "Request: Create and process 2 requests",
+            "description": null
+        },
+        {
+            "id": "request-remove-2-requests-code",
+            "name": "Request: Remove 2 requests code",
+            "description": null
+        },
+        {
+            "id": "request-use-kernelevents-request",
+            "name": "Request: Use KernelEvents::REQUEST",
+            "description": null
+        },
+        {
+            "id": "request-use-yaml-routing-temporarily",
+            "name": "Request: Use YAML routing temporarily",
+            "description": null
+        },
+        {
+            "id": "request-put-back-normal-routing",
+            "name": "Request: Put back normal routing",
+            "description": null
+        },
+        {
+            "id": "request-set-the-response-from-the-listener",
+            "name": "Request: Set the response from the listener",
+            "description": null
+        },
+        {
+            "id": "request-comment-out-setresponse-in-listener",
+            "name": "Request: Comment out setResponse in listener",
+            "description": null
+        },
+        {
+            "id": "request-overriding-controller-temporarily",
+            "name": "Request: Overriding _controller temporarily",
+            "description": null
+        },
+        {
+            "id": "request-adding-an-ismac-argument-to-every-controller",
+            "name": "Request: Adding an isMac argument to every controller",
+            "description": null
+        },
+        {
+            "id": "sub-request-creating-the-latest-tweets",
+            "name": "Sub-Request: Creating the latest tweets",
+            "description": null
+        },
+        {
+            "id": "sub-request-using-ismac",
+            "name": "Sub-Request: Using isMac",
+            "description": null
+        },
+        {
+            "id": "sub-request-create-one-manually",
+            "name": "Sub-Request: Create one manually",
+            "description": null
+        },
+        {
+            "id": "sub-request-listener-only-on-the-master-request",
+            "name": "Sub-Request: Listener only on the master request",
+            "description": null
+        },
+        {
+            "id": "sub-request-properly-pass-the-variable",
+            "name": "Sub-Request Properly pass the variable",
+            "description": null
+        },
+        {
+            "id": "di-basic-logger",
+            "name": "DI: Basic logger",
+            "description": null
+        },
+        {
+            "id": "di-wrap-in-a-runapp-function",
+            "name": "DI: Wrap in a runApp function",
+            "description": null
+        },
+        {
+            "id": "container-create-the-containerbuilder",
+            "name": "Container: Create the ContainerBuilder",
+            "description": null
+        },
+        {
+            "id": "container-basic-handler-creation",
+            "name": "Container: Basic Handler creation",
+            "description": null
+        },
+        {
+            "id": "container-handler-inside-the-container",
+            "name": "Container: Handler inside the container",
+            "description": null
+        },
+        {
+            "id": "containerbuilder-add-logger-definition",
+            "name": "ContainerBuilder: Add logger definition",
+            "description": null
+        },
+        {
+            "id": "containerbuilder-add-handler-definition",
+            "name": "ContainerBuilder: Add handler definition",
+            "description": null
+        },
+        {
+            "id": "containerbuilder-simple-addmethodcall",
+            "name": "ContainerBuilder: Simple addMethodCall",
+            "description": null
+        },
+        {
+            "id": "containerbuilder-addmethodcall-to-service",
+            "name": "ContainerBuilder: addMethodCall to service",
+            "description": null
+        },
+        {
+            "id": "config-files-initial-yml-load-of-logger",
+            "name": "Config Files: Initial yml load of logger",
+            "description": null
+        },
+        {
+            "id": "config-files-service-with-bad-format",
+            "name": "Config Files: @service with bad format",
+            "description": null
+        },
+        {
+            "id": "config-files-adding-service-argument",
+            "name": "Config Files: Adding @service argument",
+            "description": null
+        },
+        {
+            "id": "config-files-simple-addmethodcalls",
+            "name": "Config Files: Simple addMethodCalls",
+            "description": null
+        },
+        {
+            "id": "config-files-another-addmethodcall",
+            "name": "Config Files: Another addMethodCall",
+            "description": null
+        },
+        {
+            "id": "config-files-move-simple-handler-to-yml",
+            "name": "Config Files: Move simple handler to yml",
+            "description": null
+        },
+        {
+            "id": "config-files-set-parameter-externally-for-root-dir",
+            "name": "Config Files: Set parameter externally for root_dir",
+            "description": null
+        },
+        {
+            "id": "config-files-adding-a-parameters-key",
+            "name": "Config Files: Adding a parameters key",
+            "description": null
+        },
+        {
+            "id": "dumping-compile-the-container",
+            "name": "Dumping: compile() the container",
+            "description": null
+        },
+        {
+            "id": "dumping-adding-basic-profiling",
+            "name": "Dumping: Adding basic profiling",
+            "description": null
+        },
+        {
+            "id": "dumping-using-phpdumper",
+            "name": "Dumping: Using PhpDumper",
+            "description": null
+        },
+        {
+            "id": "dumping-using-the-cached-container",
+            "name": "Dumping: Using the cached container",
+            "description": null
+        },
+        {
+            "id": "compiler-setup-app-dev-php-for-debugging",
+            "name": "Compiler: Setup app_dev.php for debugging",
+            "description": null
+        },
+        {
+            "id": "compiler-register-a-compiler-pass-in-symfony",
+            "name": "Compiler: Register a compiler pass in Symfony",
+            "description": null
+        },
+        {
+            "id": "kernel-var-dump-after-creating-the-container",
+            "name": "Kernel: var_dump after creating the container",
+            "description": null
+        },
+        {
+            "id": "kernel-remove-var-dump",
+            "name": "Kernel: remove var_dump",
+            "description": null
+        },
+        {
+            "id": "kernel-var-dump-after-registercontainerconfiguration",
+            "name": "Kernel: var_dump after registerContainerConfiguration",
+            "description": null
+        },
+        {
+            "id": "kernel-dump-the-whole-parameter-pag",
+            "name": "Kernel: Dump the whole parameter pag",
+            "description": null
+        },
+        {
+            "id": "kernel-removing-dump",
+            "name": "Kernel: Removing dump",
+            "description": null
+        },
+        {
+            "id": "die-adding-journey-fake-config",
+            "name": "DIE: Adding journey fake config",
+            "description": null
+        },
+        {
+            "id": "die-removing-fake-config",
+            "name": "DIE: Removing fake config",
+            "description": null
+        },
+        {
+            "id": "die-adding-twig-global",
+            "name": "DIE: Adding Twig global",
+            "description": null
+        },
+        {
+            "id": "die-var-dump-in-twigextension",
+            "name": "DIE: var_dump in TwigExtension",
+            "description": null
+        },
+        {
+            "id": "die-dump-config-in-twigextension",
+            "name": "DIE: Dump $config in TwigExtension",
+            "description": null
+        },
+        {
+            "id": "die-remove-from-twigextension",
+            "name": "DIE: Remove from TwigExtension",
+            "description": null
+        },
+        {
+            "id": "compiler-var-dump-in-kernel",
+            "name": "Compiler: var_dump in Kernel",
+            "description": null
+        }
+    ],
+    "sha": "703b1dd5c58aa0035aa4ad4c060571ab33105a1b"
+}

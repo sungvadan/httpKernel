@@ -1,0 +1,37 @@
+diff --git a/app/Resources/views/base.html.twig b/app/Resources/views/base.html.twig
+index ac58259..1865bd7 100644
+--- a/app/Resources/views/base.html.twig
++++ b/app/Resources/views/base.html.twig
+@@ -39,7 +39,9 @@
+                 </div>
+                 <div class="clearfix">
+                 </div>
+-                {{ render(controller('AppBundle:Dinosaur:_latestTweets')) }}
++                {{ render(controller('AppBundle:Dinosaur:_latestTweets', {
++                    'userOnMac': app.request.attributes.get('isMac')
++                })) }}
+             </div>
+         </div>
+ 
+diff --git a/src/AppBundle/Controller/DinosaurController.php b/src/AppBundle/Controller/DinosaurController.php
+index 4e7b269..cd994b5 100644
+--- a/src/AppBundle/Controller/DinosaurController.php
++++ b/src/AppBundle/Controller/DinosaurController.php
+@@ -56,7 +56,7 @@ class DinosaurController extends Controller
+         ]);
+     }
+ 
+-    public function _latestTweetsAction($isMac)
++    public function _latestTweetsAction($userOnMac)
+     {
+         $tweets = [
+             'Dinosaurs can have existential crises too you know.',
+@@ -66,7 +66,7 @@ class DinosaurController extends Controller
+ 
+         return $this->render('dinosaurs/_latestTweets.html.twig', [
+             'tweets' => $tweets,
+-            'isMac' => $isMac
++            'isMac' => $userOnMac
+         ]);
+     }
+ }

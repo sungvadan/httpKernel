@@ -1,0 +1,45 @@
+title:  Journey to the Center of Symfony: The Dependency Injection Container
+summary: |
+    Let's not just *use* Symfony, let's conquer it! In this series, we're
+    going to rip open the code that builds and boots Symfony's Container
+    to see how it really works. Yes, this is geeky, and yes it's sweet!
+
+    Besides the occassional [dinosaur](http://upload.wikimedia.org/wikipedia/commons/a/a0/Amazing_Stories_June_1926.jpg),
+    expect to do the following on our adventure:
+
+    * Build a container from scratch
+    * Master the **ContainerBuilder** and **Definition** objects: the backbones to the container
+    * See how Definitions are built with YAML
+    * Dump the container to PHP code and use it
+    * See how Symfony *builds* the container (woh)
+    * Learn how DependencyInjection Extension classes work (i.e. the guys who process all that `config.yml` stuff)
+    * Discover existing compiler passes and create your own
+
+illustration: sf2-journey-container.png
+videoDownloadExtension: mov
+
+tuts_hero:
+    start_step: sub-request-properly-pass-the-variable
+
+chapters:
+    container-in-the-wild:
+        is_free: true
+        video_key: 140216510
+    definition:
+        is_free: true
+        video_key: 140216512
+    definition-unlocked:
+        is_free: true
+        video_key: 140216513
+    yaml:
+        video_key: 140216511
+    parameters:
+        video_key: 140216514
+    dumper:
+        video_key: 140216515
+    symfony-builds-the-container:
+        video_key: 140216518
+    dependency-injection-extensions:
+        video_key: 140216516
+    compiler-passes:
+        video_key: 140216517

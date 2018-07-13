@@ -1,0 +1,48 @@
+title:  Journey to the Center of Symfony: HttpKernel Request-Response
+summary: |
+    Let's not just *use* Symfony, let's conquer it! In this series, you and
+    I will journey to the center of Symfony by ripping open the source code,
+    adding debug statements and seeing what *really* happens between the
+    request and the response. It's as geeky-awesome as it sounds.
+
+    [Besides dinosaurs](http://upload.wikimedia.org/wikipedia/commons/a/a0/Amazing_Stories_June_1926.jpg),
+    expect to do the following on our adventure:
+
+    * Create an event listener that does amazing things
+    * Step through the `HttpKernel::handle()` method that's used in Symfony and Drupal 8
+    * See where event like `kernel.request`, `kernel.response` and others are dispatched
+    * Learn about request attributes and the magic they give us
+    * Find out what a sub-request and how to handle it
+    * Create your own sub-request manually
+
+illustration: sf2-journey-kernel.png
+videoDownloadExtension: mov
+
+tuts_hero:
+    start_step: start
+    finish_step: sub-request-properly-pass-the-variable
+chapters:
+    event-subscriber:
+        is_free: true
+        video_key: 140191188
+    httpkernel-handle:
+        is_free: true
+        video_key: 140191190
+    httpkernel-router-listener:
+        video_key: 140191184
+    determine-the-controller:
+        video_key: 140191186
+    kernel.controller-and-getarguments:
+        video_key: 140191185
+    kernel.view-event:
+        video_key: 140191187
+    httpkernel-handle-finishing-up:
+        video_key: 140191192
+    magically-replace-_controller:
+        video_key: 140191193
+    magically-add-controller-args:
+        video_key: 140191194
+    sub-requests:
+        video_key: 140191195
+    sub-request-internals:
+        video_key: 140191196

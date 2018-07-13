@@ -1,0 +1,59 @@
+diff --git a/app/AppKernel.php b/app/AppKernel.php
+index e6f4165..2a93702 100644
+--- a/app/AppKernel.php
++++ b/app/AppKernel.php
+@@ -36,4 +36,12 @@ class AppKernel extends Kernel
+     {
+         $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
+     }
++
++    protected function buildContainer()
++    {
++        $containerBuilder = parent::buildContainer();
++        $containerBuilder->addCompilerPass(new \AppBundle\DependencyInjection\Compiler\EarlyLoggingMessagePass());
++
++        return $containerBuilder;
++    }
+ }
+diff --git a/app/cache/dev/appDevDebugProjectContainer.php b/app/cache/dev/appDevDebugProjectContainer.php
+index 316aa98..6024a6a 100644
+--- a/app/cache/dev/appDevDebugProjectContainer.php
++++ b/app/cache/dev/appDevDebugProjectContainer.php
+@@ -2098,6 +2098,7 @@ class appDevDebugProjectContainer extends Container
+         $instance->pushHandler($this->get('monolog.handler.console'));
+         $instance->pushHandler($this->get('monolog.handler.main'));
+         $instance->pushHandler($this->get('monolog.handler.debug'));
++        $instance->debug('Logger CREATED!');
+ 
+         return $instance;
+     }
+diff --git a/src/AppBundle/DependencyInjection/Compiler/EarlyLoggingMessagePass.php b/src/AppBundle/DependencyInjection/Compiler/EarlyLoggingMessagePass.php
+new file mode 100644
+index 0000000..1fd4d44
+--- /dev/null
++++ b/src/AppBundle/DependencyInjection/Compiler/EarlyLoggingMessagePass.php
+@@ -0,0 +1,23 @@
++<?php
++
++namespace AppBundle\DependencyInjection\Compiler;
++
++use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
++use Symfony\Component\DependencyInjection\ContainerBuilder;
++
++class EarlyLoggingMessagePass implements CompilerPassInterface
++{
++    /**
++     * You can modify the container here before it is dumped to PHP code.
++     *
++     * @param ContainerBuilder $container
++     *
++     * @api
++     */
++    public function process(ContainerBuilder $container)
++    {
++        $definition = $container->findDefinition('logger');
++        $definition->addMethodCall('debug', array('Logger CREATED!'));
++    }
++
++}
+\ No newline at end of file

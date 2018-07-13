@@ -1,0 +1,41 @@
+diff --git a/dino_container/config/services.yml b/dino_container/config/services.yml
+index 647a690..c9467f8 100644
+--- a/dino_container/config/services.yml
++++ b/dino_container/config/services.yml
+@@ -8,6 +8,10 @@ services:
+             - ['pushHandler', ['@logger.std_out_handler']]
+             - ['debug', ['Logger just got started!!!']]
+ 
++    logger.stream_handler:
++        class: Monolog\Handler\StreamHandler
++        arguments: ['%root_dir%/dino.log']
++
+     logger.std_out_handler:
+         class: Monolog\Handler\StreamHandler
+         arguments: ['php://stdout']
+diff --git a/dino_container/roar.php b/dino_container/roar.php
+index d872a82..32c9e9f 100644
+--- a/dino_container/roar.php
++++ b/dino_container/roar.php
+@@ -4,19 +4,16 @@ namespace Dino\Play;
+ 
+ use Symfony\Component\Config\FileLocator;
+ use Symfony\Component\DependencyInjection\ContainerBuilder;
+-use Symfony\Component\DependencyInjection\Definition;
+ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+ 
+ require __DIR__.'/../vendor/autoload.php';
+ 
+ $container = new ContainerBuilder();
++$container->setParameter('root_dir', __DIR__);
++
+ $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/config'));
+ $loader->load('services.yml');
+ 
+-$handlerDefinition = new Definition('Monolog\Handler\StreamHandler');
+-$handlerDefinition->setArguments(array(__DIR__.'/dino.log'));
+-$container->setDefinition('logger.stream_handler', $handlerDefinition);
+-
+ runApp($container);
+ 
+ function runApp(ContainerBuilder $container)
